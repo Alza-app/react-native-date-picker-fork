@@ -3,6 +3,10 @@ import {View, Text, ScrollView, StyleSheet, Dimensions, TouchableOpacity} from "
 
 import {LinearGradient} from "expo-linear-gradient";
 
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
 const DatePicker: React.FC<DatePickerProps> = ({
     value,
     onChange,
@@ -64,6 +68,8 @@ const DatePicker: React.FC<DatePickerProps> = ({
                     return {name: "day", digits: days, value: date.getDate()};
                 case "mm":
                     return {name: "month", digits: months, value: date.getMonth() + 1};
+                case "MMMM":
+                    return {name: "month", digits: months, value: date.getMonth() + 1};
                 case "yyyy":
                     return {name: "year", digits: years, value: date.getFullYear()};
                 default:
@@ -83,6 +89,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
                 getOrder().map((el, index) => {
                     return (
                         <DateBlock
+                            fullMonthName={el.name === "month" && format.includes("MMMM")}
                             digits={el.digits}
                             value={el.value}
                             onChange={changeHandle}
@@ -115,6 +122,7 @@ const DateBlock: React.FC<DateBlockProps> = ({
     markHeight,
     markWidth,
     fadeColor,
+    fullMonthName
 }) => {
     const dHeight: number = Math.round(height / 4);
 
@@ -188,7 +196,7 @@ const DateBlock: React.FC<DateBlockProps> = ({
                                     }
                                 ]}
                             >
-                                {value}
+                                {fullMonthName ? monthNames[index] : value}
                             </Text>
                         </TouchableOpacity>
                     )
@@ -238,7 +246,6 @@ const styles = StyleSheet.create({
     },
     mark: {
         position: "absolute",
-        borderRadius: 10,
     },
     gradient: {
         position: "absolute",
@@ -274,6 +281,7 @@ export interface DateBlockProps {
     markHeight?: number;
     markWidth?: number | string;
     fadeColor?: string;
+    fullMonthName: boolean
 
     onChange(type: string, digit: number): void;
 }
