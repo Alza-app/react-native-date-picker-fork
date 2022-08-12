@@ -26,6 +26,7 @@ export interface DateBlockProps {
     markHeight?: number;
     markWidth?: number | string;
     fadeColor?: string;
+    fullMonthName: boolean;
     onChange(type: string, digit: number): void;
 }
 export default DatePicker;
