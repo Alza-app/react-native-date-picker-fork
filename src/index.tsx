@@ -167,7 +167,6 @@ const DateBlock: React.FC<DateBlockProps> = ({
                 style={styles.scroll}
                 snapToOffsets={offsets}
                 showsVerticalScrollIndicator={false}
-                scrollEventThrottle={0}
                 onMomentumScrollEnd={handleMomentumScrollEnd}
             >
                 {digits.map((value: number, index: number) => {
