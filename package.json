@@ -41,10 +41,10 @@
   "devDependencies": {
     "@babel/core": "~7.19.1",
     "@types/react": "~16.9.35",
-    "@types/react-dom": "~16.9.8",
+    "@types/react-dom": "~18.0.6",
     "@types/react-native": "~0.63.2",
     "react": "^17.0.1",
-    "react-dom": "16.13.1",
+    "react-dom": "18.2.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
     "react-native-builder-bob": "^0.17.1",
     "expo-linear-gradient": "~10.0.3",
