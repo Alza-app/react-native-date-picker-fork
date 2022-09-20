@@ -22,6 +22,7 @@
     "expo"
   ],
   "scripts": {
+    "example": "cd example && yarn start",
     "build": "bob build"
   },
   "repository": {
