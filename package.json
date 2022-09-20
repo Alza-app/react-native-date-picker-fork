@@ -44,7 +44,7 @@
     "@types/react-dom": "~18.0.6",
     "@types/react-native": "~0.69.6",
     "react": "^18.2.0",
-    "react-dom": "18.0.0",
+    "react-dom": "18.2.0",
     "react-native": "^0.69.5",
     "react-native-builder-bob": "^0.17.1",
     "expo-linear-gradient": "~10.0.3",
